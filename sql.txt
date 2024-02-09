@@ -1,0 +1,152 @@
+CREATE table CAD_OSS_USER_REG
+(ID int primary key auto_increment,
+FIRST_NAME varchar(255) not null,
+MIDDLE_NAME varchar(255),
+LAST_NAME varchar(255),
+GENDER varchar(255) not null,
+PHONE_NO long not null,
+EMAIL varchar(255) not null,
+PASSWORD varchar(255) NOT NULL,
+CREATED_BY varchar(255),
+CREATED_ON datetime,
+MODIFIED_BY VARCHAR(255),
+MODIFIED_ON datetime);
+ 
+INSERT INTO CAD_OSS_USER_REG 
+values (1001,'Aarif',null,'S','MALE',9025171297,'aarif01cad@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1002,'Abdul ','rahman','A','MALE',9042116396,'abdulrahmancad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1003,'Abinaya',null,'J','female',8124568273,'abinayakumarcad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1004,'Ahamed ',null,'J','male',9659021407,'ahamedcad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1005,'ALEXANDAR ',null,'A','Male',9360415014,'alexandaracad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1006,'Anand',null,'R','Male',8489903993,'anandravichandrancad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1007,'Anjuka ',null,'P','female',6379944693,'anjukapugaz02@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1008,'Aravind.',null,'K','male',8778624466,'aravind2k23cad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1009,'Basheer','ahamed','M','male',9514690405,'basheercad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1010,'Chandran ',null,'P','male',9361313775,'chandrancad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1011,'Danielraj ',null,'A',' male',9092838116,'danielrajcad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1012,'Dinesh ',null,'T','Male',9629724889,'tdineshcad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1013,'Domenig ','vasanthan','A','Male',8220904749,'vasanthcad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1014,'Gopal',null,'S','MALE',9361448297,'gopalcad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1015,'HARSH',null,'A','MALE',9025664587,'harshcad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1016,'Jayapravin ',null,'D','MALE',7094937902,'jayapravincad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1017,'jemimah',null,'J','Female ',9489189043,'jemimahcad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1018,'Manimohana ',null,'S','Female ',9994987424,'Mohanacad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1019,'Kiruthiga ',null,'R','Female ',7339220870,'kiruthigarcad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1020,'Nancy ',null,'A','Female ',8428267221,'nancyacad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1021,'Natrayan ',null,'M','male',8825684098,'natrayancad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1022,'Pavithra ',null,'K','Female ',9025862493,'pavithracad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1023,'prabhaharn',null,'M','Male',9043792705,'prabhaharncad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1024,'RAMKI ',null,'S','Male',6383693933,'ramkisridharcad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1025,'Sahith ','afridi','Sabibula','Male',9042314497,'sahithcad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1026,'sakthivel',null,'S','male',9514605031,'jerrycad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1027,'Sanjay ',null,'Balakrishnan','Male',7708407173,'sanjayrbcad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1028,'Santhosh','kumar',' S','male',9344560546,'santhoshcad01@gmail.Com','Password@123',NULL,NULL,NULL,NULL),
+(1029,'Saran ',null,'S','Male',6380026784,'sarancad01@gmail.com','Password@123',NULL,NULL,NULL,NULL),
+(1030,'Siranjeevi',null,'S','Male',6383685553,'jemimahcad01@gmail.com','Password@123',NULL,NULL,NULL,NULL);
+
+ 
+ SELECT*FROM login_tbl;
+ DROP table login_tbl;
+ 
+ CREATE TABLE login_tbl
+ (login_id INT primary KEY,
+ reg_no int,
+ user_name varchar(255),
+ E_mail varchar(255),
+ password varchar(255),
+ created_by varchar(255),
+ created_on date,
+ modified_by varchar(255),
+ modified_on date,
+ foreign key (reg_no) references CAD_OSS_USER_REG (id)
+ );
+ 
+drop table login_tbl; 
+
+insert into login_tbl (login_id,reg_no,user_name,E_MAIL,password,created_by,created_on,modified_by,modified_on) values
+(101,1001,'Aarif S','aarif01cad@gmail.com','Password@123','Aarif S','2023/22/12','HARSH A','2023/22/12'),
+(102,1002,'Abdul rahman A','abdulrahmancad01@gmail.com','Password@124','Abdul rahman A','2023/22/12','Jayapravin D','2023/22/12'),
+(103,1003,'Abinaya.J','abinayakumarcad01@gmail.com','Password@125','Abinaya.J','2023/22/12','jemimah j','2023/22/12'),
+(104,1004,'Ahamed J','ahamedcad01@gmail.com','Password@126','Ahamed J','2023/22/12','Manimohana S','2023/22/12'),
+(105,1005,'ALEXANDAR A ','alexandaracad01@gmail.com','Password@127','ALEXANDAR A ','2023/22/12','Kiruthiga R','2023/22/12'),
+(106,1006,'Anand R','anandravichandrancad01@gmail.com','Password@128','Anand R','2023/22/12','Nancy A','2023/22/12'),
+(107,1007,'Anjuka P','anjukapugaz02@gmail.com','Password@129','Anjuka P','2023/22/12','Natrayan M','2023/22/12'),
+(108,1008,'Aravind.K','aravind2k23cad01@gmail.com','Password@130','Aravind.K','2023/22/12','Pavithra K','2023/22/12'),
+(109,1009,'Basheer Ahamed M','basheercad01@gmail.com','Password@131','Basheer Ahamed M','2023/22/12','prabhaharn.M','2023/22/12'),
+(110,1010,'Chandran P','chandrancad01@gmail.com','Password@132','Chandran P','2023/22/12','RAMKI S','2023/22/12'),
+(111,1011,'Danielraj A','danielrajcad01@gmail.com','Password@133','Danielraj A','2023/22/12','Sahith Afridi Sabibulla','2023/22/12'),
+(112,1012,'Dinesh T','tdineshcad01@gmail.com','Password@134','Dinesh T','2023/22/12','sakthivel. S','2023/22/12'),
+(113,1013,'Domenig Vasanthan A','vasanthcad01@gmail.com','Password@135','Domenig Vasanthan A','2023/22/12','Sanjay Balakrishnan','2023/22/12'),
+(114,1014,'Gopal S','gopalcad01@gmail.com','Password@136','Gopal S','2023/22/12','Santhosh Kumar S','2023/22/12'),
+(115,1015,'HARSH A','harshcad01@gmail.com','Password@137','HARSH A','2023/22/12','Saran S','2023/22/12'),
+(116,1016,'Jayapravin D','jayapravincad01@gmail.com','Password@138','Jayapravin D','2023/22/12','Siranjeevi S','2023/22/12'),
+(117,1017,'jemimah j','jemimahcad01@gmail.com','Password@139','jemimah j','2023/22/12','Aarif S','2023/22/12'),
+(118,1018,'Manimohana S','Mohanacad01@gmail.com','Password@140','Manimohana S','2023/22/12','Abdul rahman A','2023/22/12'),
+(119,1019,'Kiruthiga R','kiruthigarcad01@gmail.com','Password@141','Kiruthiga R','2023/22/12','Abinaya.J','2023/22/12'),
+(120,1020,'Nancy A','nancyacad01@gmail.com','Password@142','Nancy A','2023/22/12','Ahamed J','2023/22/12'),
+(121,1021,'Natrayan M','natrayancad01@gmail.com','Password@143','Natrayan M','2023/22/12','ALEXANDAR A ','2023/22/12'),
+(122,1022,'Pavithra K','pavithracad01@gmail.com','Password@144','Pavithra K','2023/22/12','Anand R','2023/22/12'),
+(123,1023,'prabhaharn.M','prabhaharncad01@gmail.com','Password@145','prabhaharn.M','2023/22/12','Anjuka P','2023/22/12'),
+(124,1024,'RAMKI S','ramkisridharcad01@gmail.com','Password@146','RAMKI S','2023/22/12','Aravind.K','2023/22/12'),
+(125,1025,'Sahith Afridi Sabibulla','sahithcad01@gmail.com','Password@147','Sahith Afridi Sabibulla','2023/22/12','Basheer Ahamed M','2023/22/12'),
+(126,1026,'sakthivel. S','jerrycad01@gmail.com','Password@148','sakthivel. S','2023/22/12','Chandran P','2023/22/12'),
+(127,1027,'Sanjay Balakrishnan','sanjayrbcad01@gmail.com','Password@149','Sanjay Balakrishnan','2023/22/12','Danielraj A','2023/22/12'),
+(128,1028,'Santhosh Kumar S','santhoshcad01@gmail.Com','Password@150','Santhosh Kumar S','2023/22/12','Dinesh T','2023/22/12'),
+(129,1029,'Saran S','siranjeevicad01@gmail.com','Password@151','Saran S','2023/22/12','Domenig Vasanthan A','2023/22/12'),
+(130,1030,'Siranjeevi S','sarancad01@gmail.com','Password@152','Siranjeevi S','2023/22/12','Gopal S','2023/22/12');
+
+	
+ CREATE TABLE PRODUCT_LIST
+(ID int primary key NOT null,
+PRODUCT_NAME VARCHAR(255),
+PRODUCT_MODEL_NO int,
+SIZE varchar(255),
+DESIGN varchar(255),
+PRICE double,
+RETAIL_PRICE double,
+DESCRIPTION varchar(255),
+MODEL_YEAR VARCHAR (255),
+CREATED_BY varchar(255),
+CREATED_ON date
+ );
+
+ SELECT*FROM PRODUCT_LIST;
+ 
+create table cad_oss_ordr
+(ID int primary key not null,
+ORDR_USER_ID int,
+CUSTOMER_NAME varchar(255) not null,
+AMOUNT float not null,
+SHIP_ADD varchar(255) not null,
+SHIP_NAME varchar(255) not null,
+COUNTRY varchar(255) not null,
+CITY varchar(255) not null,
+STATE varchar(255) not null,
+PHONE long not null,
+EMAIL varchar(255) NOT null,
+CANCELLATION varchar(255),
+ORDR_DATE date NOT null,
+ORDER_TRCK_NO varchar(255) NOT NULL,
+DELIVERY_BY varchar(255),
+DELIVERY_ON DATE,
+CANCELLED_BY varchar(255),
+CANCELLED_ON DATE,
+foreign key (ORDR_USER_ID) references  PRODUCT_LIST (ID));
+
+
+
+
+
+CREATE table PROMOTION_TBL
+(ID INT primary KEY,
+PROD_ID INT NOT null,
+PROD_NAME varchar(255) NOT NULL,
+PRICE double ,
+RETAIL_PRICE DOUBLE,
+DESCRIPTION varchar(255),
+COLOR varchar(255),
+SIZE varchar(255),
+COUPON_CODE varchar(255),
+foreign key (PROD_ID) references PRODUCT_LIST (ID));
+ SELECT*FROM PROMOTION_TBL;
+
